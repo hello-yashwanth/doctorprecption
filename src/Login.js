@@ -35,7 +35,7 @@ const Onsubmit = async (event)=>{
       }
     } catch (err) {
       console.error(err);
-      alert('Error: ' + (err.response?.data?.error || 'Something went wrong'));
+      // alert('Error: ' + (err.response?.data?.error || 'Something went wrong'));
     }
 }
 return(
