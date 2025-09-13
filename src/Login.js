@@ -29,7 +29,7 @@ const Onsubmit = async (event)=>{
           email,
           password
         });
-        alert('Login successful! Welcome ' + res.data.user.firstName);
+        alert('Login successful! Welcome ' + res.data.user.Lastname);
         SetEmail('');
         Setpassword('')
       }

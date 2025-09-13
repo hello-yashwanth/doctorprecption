@@ -6,6 +6,11 @@ import { Doctor } from './doctorsec';
 import { Login } from './Login';
 import { Main as MainBook } from './Booking';
 import { Contact } from './contact';
+import Myprofile from './Myprofile';
+import MyAppois from './MyAppois';
+import Chatbot from './chatbot';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import Button from 'react-bootstrap/Button'
 import {useNavigate} from 'react-router-dom'
 import {BrowserRouter , Route , Routes, Link} from 'react-router-dom'
@@ -20,6 +25,7 @@ function All(){
     <DownMobileimg/>
     <LastDoctor/>
     <GetinTouch/>
+    <Chatbot/>
    </>
   )
 }
@@ -60,7 +66,7 @@ function Mobile(){
         <h1>Get Prescription Today</h1>
         <p>Are you ready to improve the quality of your patient relationships? Request a demo and learn more about how we can help you grow your healthcare practice today.</p>
         <button onClick={()=>{
-          window.open('https://web.whatsapp.com/9347663579')
+          window.open('https://web.whatsapp.com/917021622930')
         }}>Request Demo</button>
        </div>
     </div>
@@ -139,7 +145,7 @@ These Are The Features That Make Prescrip Popular</h1>
             <p>Make a quick responses if you dont know</p>
             <button id='quick' onClick={()=>{
               show(!showMore)
-            }}>{showMore ? show :'Learn More'}</button>
+            }}>{showMore ? "showless" :'Learn More'}</button>
 {
   showMore&&(
             <p id= "quick1">Prescrip is easily accessible on your Android or (iOS) smartphone, tablet and even on laptop. You can connect easily to any popular printer, quickly create your personalized prescriptions and print out professional looking, compliant prescriptions instantly. You can even share the e-copy of the same prescription via SMS, WhatsApp or email</p>
@@ -156,7 +162,7 @@ These Are The Features That Make Prescrip Popular</h1>
             <p>You can spend more time making your diagnosis and less time writing the similar prescriptions</p>
             <button id='quick1' onClick={()=>{
               show1(!showMore1)
-            }}>{showMore1 ? show1 :'Learn More'}</button>
+            }}>{showMore1 ? "showless" :'Learn More'}</button>
 {
   showMore1&&(
             <p id= "quick2">Based on our research, we have found that most doctors tend to often prescribe a certain type of medicines for many ailments.Knowing this we have built Prescrip to allow you to quickly create prescriptions with commonly prescribed drugs, similar complaints & diagnosis and save them as favourites.</p>
@@ -171,7 +177,7 @@ These Are The Features That Make Prescrip Popular</h1>
             <p>Save hours by getting history of each patient’s medical records right from the app</p>
             <button id='quick2' onClick={()=>{
               show2(!showMore2)
-            }}>{showMore2 ? show2 :'Learn More'}</button>
+            }}>{showMore2 ? "showless":'Learn More'}</button>
 {
   showMore2&&(
             <p id= "quick3">With increasing number of patients it can become challenging to keep track of all their unique needs and history. It is important that you have complete information about each patient, no matter how long it has been since their last visit.</p>
@@ -186,7 +192,7 @@ These Are The Features That Make Prescrip Popular</h1>
             <p>Easily access all your patient data anytime anywhere.</p>
             <button id='quick3' onClick={()=>{
               show3(!showMore3)
-            }}>{showMore3 ? show3 :'Learn More'}</button>
+            }}>{showMore3 ? "showless" :'Learn More'}</button>
 {
   showMore3&&(
             <p id= "quick4">The success of any healthcare practice lies in the effective and efficient management of its patients. To ensure that you are able to provide the best care and advice, Prescrip tracks patient records and helps you build stronger relationships with each of them.</p>
@@ -223,10 +229,25 @@ function GetinTouch(){
            <div className='getin1'>
                 <ul>
           <li>Company</li>
-          <li>Home</li>
-          <li>About</li>
-          <li>Privacy</li>
+          <li>About Us</li>
+          <li>Health Article
+</li>
+          <li>Health Stories</li>
+          <li>Diseases & Health Conditions
+</li>
+<li>Ayurveda</li>
+<li>All Medicines</li>
+<li>All Brands</li>
+<li>Need Help</li>
+<li>
+FAQ</li>
          </ul>
+           </div>
+           <div className='getin22'>
+            <h1>Social Medias</h1>
+             <FontAwesomeIcon icon={faInstagram} style={{fontSize:"50px" , color:"blue"}}/>
+             <FontAwesomeIcon icon={faTwitter} style={{fontSize:"50px" , color:"blue"}}/>
+             <FontAwesomeIcon icon={faFacebook} style={{fontSize:"50px", color:"blue"}}/>
            </div>
            <div className='getin2'>
             <h1>GetInTouch</h1>
@@ -239,7 +260,7 @@ function GetinTouch(){
     </div>
   )
 }
-function Navigator(){
+export function Navigator(){
     const yourlist =  [
     {id:1, image:"/assects/doctor1.jpg", Mode:"Available", name:"Dr.Sawithika",  Experience:1.5, Title:"Physician", Appoinment:"$2"},
     {id:2, image:"/assects/doctor2.jpg", Mode:"Available", name:"Dr.Antoni Shkraba ",  Experience:2.5, Title:"Dermatologist"       , Appoinment:"$2"},
@@ -256,22 +277,24 @@ function Navigator(){
 
   ]
   return(
+    
     <BrowserRouter>
     <Linked/>
     <Routes>
       
       <Route  path="/"  element= {<All/>} ></Route>
-      <Route  path="/My-profile"  element= {<MyProfile/>} ></Route>
+      <Route  path="/My-profile"  element= {<Myprofile/>} ></Route>
       <Route  path="/My-login"  element= {<Login/>} ></Route>
       <Route  path="/Doctor-Appoinment"  element= {<Doctors/>} ></Route>
       <Route  path="/Doctor-Appoinment/:id"  element= {<MainBook/>} ></Route>
-      <Route  path="/My-appoinments"  element= {<MyAppoi/>} ></Route>
+      <Route  path="/My-appoinments"  element= {<MyAppois/>} ></Route>
       <Route  path="/Alldoctors"  element= {<Doctor doctors={yourlist} />} ></Route>
       <Route  path="/Alldoctors/:specialist"  element= {<Doctor doctors={yourlist} />} ></Route>
       <Route  path="/About"  element= {<App/>} ></Route>
       <Route  path="/contact"  element= {<Contact/>} ></Route>
     </Routes>
     </BrowserRouter>
+ 
   )
 }
 function Linked(){

@@ -28,6 +28,40 @@ function App() {
 ✔ Fast prescriptions delivered in minutes<br/>
 ✔ Trusted by 500,000+ members</p>
         </div>
+     <div className="trust">
+  <h2>Why 10000+ Doctors Trust Prescrip?</h2>
+  <p>
+    Our best brand ambassadors are our clients themselves.
+    <br />
+    Here’s what they have to say about how Prescrip has improved their patient experience.
+  </p>
+  <div className="trust1">
+    <iframe
+      src="https://www.youtube.com/embed/AbEeuuBRr20"
+      title="Doctor appointment video 1"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+
+    <iframe
+      src="https://www.youtube.com/embed/pX_KpvREk_o"
+      title="Doctor appointment video 2"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+
+    <iframe
+      src="https://www.youtube.com/embed/XP7xFXpu7fQ"
+      title="Doctor appointment video 3"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+
+  </div>
+</div>
     </div>
 </>
   )

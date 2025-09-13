@@ -34,7 +34,7 @@ app.post('/My-login', async (req, res) => {
   let user = await User.findOne({ email, password });
   if (!user) return res.status(400).json({ error: 'Invalid credentials' });
 
-  return res.json({ message: 'Login successful', user });
+  return res.json({ message: 'Login successful', user});
 });
 
 
